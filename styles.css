@@ -1,0 +1,135 @@
+
+:root {
+    --dark-cyan:hsl(158, 36%, 37%);
+    --cream:hsl(30, 38%, 92%);
+    --dark-blue:hsl(212, 21%, 14%);
+    --gray-blue:hsl(228, 12%, 48%);
+    --white:hsl(0, 0%, 100%);
+}
+
+html {
+    font-size: 14px;
+}
+
+
+body {
+    background-color:var(--cream);
+    font-family: 'Montserrat',sans-serif;
+    font-weight:500;
+    height:100vh
+}
+
+.heading-font {
+    font-family: 'Fraunces';
+    font-weight:700
+}
+
+main {
+    display:grid;
+    place-items: center;
+    height:100%
+}
+
+.product-card {
+    width: 90%;
+    max-width:30rem;
+    background-color:var(--white);
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card__content-wrapper {
+    padding:2rem;
+    color:var(--gray-blue);
+    font-size:1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.product-card__heading {
+    font-size:2.5rem;
+    font-weight:700;
+    line-height: 100%;
+    color:black;
+    margin:1rem 0;
+}
+
+.product-card__add-to-cart {
+    width:100%;
+    background-color:var(--dark-cyan);
+    color:white;
+    text-align: center;
+    border:0;
+    border-radius: .5rem;
+    padding:1rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.product-card__cart-icon {
+    padding: 0 .75rem;
+    position:relative;
+    top:.25rem
+}
+ 
+.product-card__add-to-cart:hover,
+.product-card__add-to-cart:focus{
+    background-color: var(--dark-blue);
+    cursor:pointer
+}
+
+.product-card__price {
+    color:var(--dark-cyan);
+    font-size:2rem;
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+    padding: 1rem 0
+}
+.product-card__price--crossed {
+    color:var(--gray-blue);
+    font-size: 1rem;
+    font-family:'Montserrat',sans-serif;
+    font-weight:500;
+    text-decoration:line-through;
+    padding:0 1rem
+}
+
+.product-card__category {
+    text-transform: uppercase;
+    letter-spacing: .25rem;
+}
+
+@media screen and (max-width:680px){
+    .product-card__heading {
+        font-size: clamp(1.5rem, 10vw , 2.5rem);
+    }
+}
+
+@media screen and (min-width:680px){
+    html {
+        font-size:16px
+    }
+    .product-card {
+       flex-direction: row;
+       flex-wrap: nowrap;
+       width:90%;
+       max-width:45rem
+    }
+
+    .flex-col {
+        width:50%
+    }
+
+    .product-card__img-wrapper img {
+        transform-origin: center;
+        object-fit: cover;
+        width:100%;
+        height:auto
+    }
+}
